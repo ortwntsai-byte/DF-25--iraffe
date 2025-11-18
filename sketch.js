@@ -80,7 +80,7 @@ function drawFlashingCorners(artStartX, artStartY, artEndX, artEndY) {
     }
 
     // 3. 設定文字樣式
-    textSize(45); 
+    textSize(55); 
     textAlign(CENTER, CENTER); 
     textFont('"KaiTi", "Microsoft JhengHei", serif');
     
