@@ -218,6 +218,32 @@ function mouseWheel(event) {
     redraw(); 
 }
 
+// *** 【✅ 新增觸控互動函式：支援手機滑動】***
+function touchMoved() {
+    // p5.js 提供了 pmouseY 和 mouseY 來獲取前一幀和當前幀的 Y 座標
+    
+    // 計算垂直移動的距離 (deltaY)
+    let deltaY = pmouseY - mouseY; // (前一幀 Y - 當前幀 Y)
+    
+    // 如果 deltaY > 0 (手指向上滑，Text Art 應該向上伸長)
+    if (deltaY > 0) { 
+        neckOffset += SCROLL_SPEED;
+    } 
+    // 如果 deltaY < 0 (手指向下滑，Text Art 應該向下縮短)
+    else if (deltaY < 0) {
+        neckOffset -= SCROLL_SPEED;
+    }
+    
+    // 限制偏移量在 0 到 MAX_OFFSET 之間
+    neckOffset = constrain(neckOffset, 0, MAX_OFFSET);
+    
+    // 呼叫 redraw 刷新畫面
+    redraw();
+    
+    // 返回 false 防止頁面滾動（重要，這樣滑動時頁面才不會跟著滾）
+    return false;
+}
+
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
