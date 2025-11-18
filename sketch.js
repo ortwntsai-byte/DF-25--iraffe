@@ -155,7 +155,7 @@ function draw() {
     
     
     // --- 2. 呼叫新的閃爍函式 ---
-    if (neckOffset >= MAX_OFFSET-120) {
+    if (neckOffset >= MAX_OFFSET-280) {
     drawFlashingCorners((drawX-TOTAL_ART_WIDTH/2), ART_START_Y, ART_END_X, ART_END_Y);
     }
     //左邊界、上邊界、右邊界、下邊界
@@ -185,6 +185,20 @@ function draw() {
         text(BODY_ARRAY[i], drawX, currentY);
         currentY += LINE_HEIGHT_PIXELS; 
     }
+
+    // 1. 設定文字樣式和顏色
+    fill(255); // 白色
+    textSize(14);      // 稍微大一點
+    textAlign(CENTER, BOTTOM); // 居中對齊，並以底部為基準
+    textFont('KaiTi, "Microsoft JhengHei", serif');
+    
+    // 2. 設定位置 (放在畫布底部上方 20 像素處)
+    const bottomY = height - 20; 
+    
+    text("< 滾動滑鼠滾輪，伸縮頸鹿的脖子 >", width / 2, ART_END_Y + 30);
+    
+    // 【恢復設置 (可選)】
+    textFont('monospace');
 
 
     
