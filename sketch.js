@@ -80,16 +80,16 @@ function drawFlashingCorners(artStartX, artStartY, artEndX, artEndY) {
     }
 
     // 3. 設定文字樣式
-    textSize(40); 
+    textSize(45); 
     textAlign(CENTER, CENTER); 
     textFont('"KaiTi", "Microsoft JhengHei", serif');
     
-    const PADDING = 40; // 邊界擴大 30 像素
+    const PADDING = 45; // 邊界擴大 30 像素
     
     const L = artStartX - PADDING;
     const R = artEndX + PADDING;
-    const UP = artStartY;
-    const DOWN = artEndY-40;
+    const UP = artStartY-10;
+    const DOWN = artEndY-45;
 
     const distanceX = L-R;
     const distanceY = UP-DOWN;
